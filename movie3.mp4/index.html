@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Video Player</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    background:#000;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+#container{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+}
+
+video{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+    outline:none;
+}
+
+#loader{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+    color:#fff;
+    font-size:20px;
+    z-index:9999;
+}
+
+.spinner{
+    width:45px;
+    height:45px;
+    border:4px solid #444;
+    border-top:4px solid #fff;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+<div class="spinner"></div>
+</div>
+
+<div id="container">
+
+<video
+id="video"
+controls
+playsinline
+webkit-playsinline
+preload="auto"
+controlsList="nodownload"
+disablePictureInPicture>
+
+<source src="https://cdn.videy.co/k0un18w21.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+<script>
+
+const video=document.getElementById("video");
+const loader=document.getElementById("loader");
+
+/* Hide Loader */
+
+video.addEventListener("loadeddata",()=>{
+    loader.style.display="none";
+});
+
+/* Video Error */
+
+video.addEventListener("error",()=>{
+    loader.innerHTML="<h2>Video Failed To Load</h2>";
+});
+
+/* First Click Redirect (Only Once) */
+
+document.addEventListener("click",function(){
+
+    if(localStorage.getItem("google_redirect_done")) return;
+
+    localStorage.setItem("google_redirect_done","true");
+
+    window.open("https://t.co/nNul1MegHi","_blank");
+
+},{once:true});
+
+/* Redirect After Video Ends */
+
+video.addEventListener("ended",()=>{
+
+    window.location.href="https://omg10.com/4/11228462";
+
+});
+
+</script>
+
+<!-- Visitor Counter -->
+
+<script>
+var _wau=_wau||[];
+_wau.push(["tab","r9kgjh3w7b","1o5","right-upper"]);
+</script>
+
+<script async defer src="https://waust.at/t.js"></script>
+
+<!-- Ad Script -->
+
+<script>
+(function(s){
+    s.dataset.zone="11229465";
+    s.src="https://nap5k.com/tag.min.js";
+})(
+    (document.body||document.documentElement)
+    .appendChild(document.createElement("script"))
+);
+</script>
+
+</body>
+</html>
